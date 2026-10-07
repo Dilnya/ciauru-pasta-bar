@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ciauru Pasta Bar</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #faf7f2;
+            color: #252525;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 6%;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e7e1d9;
+        }
+
+    
+            .logo img {
+ width: 150px;
+    height: auto;
+    display: block;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #252525;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #9b6b38;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            padding-top: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+                url("images/all of the plates.PNG") center/cover no-repeat;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 900px;
+            padding: 40px;
+            animation: fadeUp 1.2s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 8vw, 100px);
+            line-height: 1;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-family: Arial, sans-serif;
+            font-size: clamp(18px, 2vw, 25px);
+            margin-bottom: 35px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 16px 35px;
+            background: #ffffff;
+            color: #222222;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: 0.3s ease;
+        }
+
+        .button:hover {
+            background: #9b6b38;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-family: Arial, sans-serif;
+            color: #666;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background: #ffffff;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+
+        .about-text h2 {
+            font-size: 48px;
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           FAVOURITES
+        ========================= */
+
+        .favourites {
+            background: #faf7f2;
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1400px;
+            margin: auto;
+        }
+.food-card {
+    color: #252525;
+    text-decoration: none;
+}
+        .food-card {
+            background: white;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.4s ease;
+        }
+
+        .food-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: 0.5s ease;
+        }
+
+        .food-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .food-card-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .food-card-content span {
+            display: block;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #9b6b38;
+            margin-bottom: 8px;
+        }
+
+        .food-card-content h3 {
+            font-size: 28px;
+        }
+        .food-card-content h3 a {
+    color: #252525;
+    text-decoration: none;
+}
+
+.food-card-content h3 a:visited {
+    color: #252525;
+}
+
+.food-card-content h3 a:hover {
+    color: #9b6b38;
+}
+
+        /* =========================
+           IMAGE SHOWCASE
+        ========================= */
+
+        .showcase {
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .showcase img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* =========================
+           CUSTOMER FEEDBACK
+        ========================= */
+
+        .reviews {
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .rating {
+            font-size: 70px;
+            font-weight: bold;
+            margin: 20px 0 5px;
+        }
+
+        .stars {
+            font-size: 30px;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        .review-count {
+            font-family: Arial, sans-serif;
+            color: #666;
+            margin-bottom: 45px;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+      .review-card {
+    position: relative;
+    background: #ffffff;
+    border: none;
+    padding: 40px 35px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.review-card::before {
+    content: "“";
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-family: Georgia, serif;
+    font-size: 70px;
+    color: #e5d7c7;
+    line-height: 1;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+}
+
+.review-card .stars {
+    font-size: 18px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    color: #9b6b38;
+}
+
+.review-card h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #252525;
+}
+
+.review-card p {
+    font-family: Arial, sans-serif;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.review-card small {
+    font-family: Arial, sans-serif;
+    color: #999;
+    font-size: 13px;
+}
+
+.review-button {
+    margin-top: 50px;
+}
+        /* =========================
+           DELIVERY
+        ========================= */
+
+        /* DELIVERY & DINING */
+
+.delivery {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+        url("images/cutting onions.PNG") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.delivery-overlay {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.delivery h2 {
+    color: white;
+    font-size: clamp(40px, 6vw, 65px);
+    margin-bottom: 15px;
+}
+
+.delivery p {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.delivery-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.delivery-button {
+    min-width: 220px;
+    padding: 18px 25px;
+    background: #9b6b38;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delivery-button:hover {
+    transform: translateY(-5px);
+    background: #9b6b38;
+    color: white;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
+.delivery-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.delivery-button:hover .delivery-icon {
+    transform: scale(1.12);
+}
+
+@media (max-width: 700px) {
+    .delivery {
+        padding: 70px 20px;
+    }
+
+    .delivery-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .delivery-button {
+        min-width: 230px;
+    padding: 17px 25px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #252525;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    }
+}
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #111111;
+            color: white;
+            padding: 50px 7%;
+            text-align: center;
+        }
+
+        footer h2 {
+            font-size: 30px;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            font-family: Arial, sans-serif;
+            color: #aaa;
+        }
+
+        .social-links {
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 12px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+        }
+
+        .social-links a:hover {
+            color: #c89b6d;
+        }
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .food-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase img {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding-top: 150px;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+
+            .food-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text h2 {
+                font-size: 38px;
+            }
+        }
+        .menu-invitation {
+    text-align: center;
+    padding: 55px 20px 20px;
+}
+
+.menu-invitation h3 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #252525;
+    margin-bottom: 12px;
+}
+
+.menu-invitation p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.7;
+    margin: 0 auto 28px;
+    max-width: 600px;
+}
+
+.menu-button {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #9b6b38;
+    color: white !important;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    border: 1px solid #9b6b38;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.menu-button:hover {
+    background: transparent;
+    color: #9b6b38 !important;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <div class="logo">
+           <img src="images/logo.png" alt="Ciauru Pasta Bar">
+</div>
+        </div>
+
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#favourites">FAVOURITES</a>
+            <a href="menu.html">MENU</a>
+            <a href="#reviews">REVIEWS</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Welcome to Ciauru</h1>
+
+            <p>
+                The Home of fresh homemade pasta.
+            </p>
+
+            <a href="#favourites" class="button">
+                GET A TASTE
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about" id="about">
+
+        <img
+            src="images/chef cooking.PNG"
+            alt="Inside Ciauru Pasta Bar"
+            class="about-image"
+        >
+
+        <div class="about-text">
+
+            <h2>About Ciauru</h2>
+
+            <p>
+                The name “Ciauru” comes from the Sicilian word meaning
+                “aroma”—a memory of the irresistible and comforting smell
+                that fills Italian homes, where you can taste the love with
+                every bite.
+            </p>
+
+            <p>
+                Here at Ciauru, we aim to share the experience of genuine
+                Italian flavour with you through Sicilian hospitality.
+            </p>
+
+            <p>
+                From dining in at our relaxed restaurant to ordering home
+                for a cosy night in, our goal is to share our homemade
+                quality with every costumer.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FAVOURITES
+    ========================= -->
+
+    <section class="favourites" id="favourites">
+
+        <h2 class="section-title">
+            Our favourites...
+        </h2>
+
+        <p class="section-intro">
+            From rich, hearty sauces to creamy ones, here are some of our Favourite dishes.
+        </p>
+
+        <div class="food-grid">
+
+            <a href="menu.html" class="food-card">
+
+                <img
+                    src="images/normal pasta flick.PNG"
+                    alt="Pasta alla Norma"
+                >
+
+                <div class="food-card-content">
+
+                    <span>PASTA</span>
+
+                    <h3>Norma</h3>
+
+                </div>
+
+            </a>
+
+
+            <a href="menu.html" class="food-card">
+
+                <img
+                    src="images/lasagna.PNG"
+                    alt="Lasagna"
+                >
+
+                <div class="food-card-content">
+
+                    <span>OVEN BAKED</span>
+
+                    <h3>Lasagna</h3>
+
+                </div>
+
+            </a>
+
+
+            <a href="menu.html" class="food-card">
+
+                <img
+                    src="images/cacio e pepe.jpg"
+                    alt="Cacio e Pepe"
+                >
+
+                <div class="food-card-content">
+
+                    <span>PASTA</span>
+
+                    <h3>Cacio e Pepe</h3>
+
+                </div>
+
+            </a>
+
+
+            <a href="menu.html" class="food-card">
+
+                <img
+                    src="images/garlic mushrooms.PNG"
+                    alt="Garlic Mushroom"
+                >
+
+                <div class="food-card-content">
+
+                    <span>SIDE</span>
+
+                    <h3>Garlic Mushroom</h3>
+
+                </div>
+
+            </a>
+
+        </div>
+<div class="menu-invitation">
+
+    <h3>Fancy a little more?</h3>
+
+    <p>
+        Take a look at our full menu and discover your next favourite dish.
+    </p>
+
+    <a href="menu.html" class="menu-button">
+        VIEW FULL MENU
+    </a>
+
+</div>
+<div class="inside-intro">
+    <h2>Take a look inside Ciauru</h2>
+    <p>
+        From our cosy seating area to the kitchen where our pasta is made fresh,
+        discover the people, atmosphere and little moments that bring Ciauru to life.
+    </p>
+</div>
+    </section>
+0
+
+    <!-- =========================
+         IMAGE SHOWCASE
+    ========================= -->
+
+    <section class="showcase">
+
+        <img
+            src="images/interior 1.PNG"
+            alt="Fresh pasta being prepared"
+        >
+
+        <img
+            src="images/interior 2.PNG"
+            alt="Chef preparing food at Ciauru"
+        >
+
+        <img
+            src="images/interior 3.PNG"
+            alt="Dining at Ciauru Pasta Bar"
+        >
+
+    </section>
+
+
+    <!-- =========================
+         CUSTOMER FEEDBACK
+    ========================= -->
+
+    <section class="reviews" id="reviews">
+
+        <h2 class="section-title">
+            CUSTOMER FEEDBACK
+        </h2>
+
+        <h3>
+            What Our Visitors Say About Our Food & Services
+        </h3>
+
+        <div class="rating">
+            4.9
+        </div>
+
+        <div class="stars">
+            ★★★★★
+        </div>
+
+        <div class="review-count">
+            Out of 5<br>
+            Rated 4.9 out of 5<br>
+            31 Ratings
+        </div>
+
+
+        <div class="review-grid">
+
+
+            <div class="review-card">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <h3>
+                    Authentic Italian food!
+                </h3>
+
+                <p>
+                    “Beautiful authentic Italian food, super friendly staff
+                    and helpful service.”
+                </p>
+
+                <small>
+                    @Google
+                </small>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <h3>
+                    Generous portions!
+                </h3>
+
+                <p>
+                    “Authentic Italian cuisine served quickly and with
+                    generous portions.”
+                </p>
+
+                <small>
+                    James Ogden @Google
+                </small>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <h3>
+                    Very good service!
+                </h3>
+
+                <p>
+                    “A very nice meal with the family very good service
+                    and the food was amazing”
+                </p>
+
+                <small>
+                    @Google
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="review-button">
+
+            <a
+                href="https://share.google/MxFBxXPzSQbqKK9HZ"
+                target="_blank"
+                class="button"
+            >
+                SEE OUR GOOGLE REVIEWS
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         DELIVERY
+    ========================= -->
+
+   <section class="delivery">
+
+    <div class="delivery-overlay">
+
+        <h2>
+            Delivery & Dining
+        </h2>
+
+        <p>
+            Enjoy Ciauru at home or visit us in person.
+        </p>
+
+        <div class="delivery-buttons">
+
+            <a
+                href="https://deliveroo.co.uk/menu/sheffield/crookes-and-broomhill/ciauru-pasta-bar-231-crookes"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="delivery-button"
+            >
+                <img src="images/deliveroo.webp" class="delivery-icon" alt="Deliveroo">
+                <span>ORDER ON DELIVEROO</span>
+            </a>
+
+            <a
+                href="https://www.toogoodtogo.com/en-gb/find/sheffield/ciaurupastabar/meal/italianhotfoodbag-244744002166446880"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="delivery-button"
+            >
+                <img src="images/too good to go.jpg" class="delivery-icon" alt="Too Good To Go">
+                <span>TOO GOOD TO GO</span>
+            </a>
+
+            <a
+                href="contact.html"
+                class="delivery-button"
+            >
+                <span class="delivery-icon">♟</span>
+                <span>BOOK A TABLE</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+   <footer>
+
+    <div class="social-footer">
+
+        <h2>CIAURU</h2>
+
+        <p class="footer-name">Pasta Bar</p>
+
+        <h3>Enjoyed your experience?</h3>
+
+        <p>
+            Follow us on social media and stay up to date with everything happening at Ciauru.
+        </p>
+
+        <div class="social-links">
+
+            <a
+                href="https://www.instagram.com/ciaurupastabarsheffield"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+            >
+                <span class="social-icon">◎</span>
+                <span>Instagram</span>
+            </a>
+
+            <a
+                href="https://www.facebook.com/61590593560656/videos/peppe-the-master-pasta-chef-ciauru-pastabar-craftpasta-authentictaste/918997983844489/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+            >
+                <span class="social-icon">f</span>
+                <span>Facebook</span>
+            </a>
+
+            <a
+                href="https://www.tripadvisor.co.uk/Restaurant_Review-g186364-d34583126-Reviews-Ciauru_Pasta_Bar-Sheffield_South_Yorkshire_England.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+            >
+                <span class="social-icon">★</span>
+                <span>Tripadvisor</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>

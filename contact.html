@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Ciauru Pasta Bar</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #faf7f2;
+            color: #252525;
+        }
+
+        /* HEADER */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 6%;
+
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e7e1d9;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #252525;
+
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #9b6b38;
+        }
+
+        /* CONTACT TITLE */
+
+        .contact-heading {
+            text-align: center;
+            padding: 80px 20px 50px;
+        }
+
+        .contact-heading h1 {
+            font-size: clamp(50px, 7vw, 90px);
+            margin-bottom: 15px;
+        }
+
+        .contact-heading p {
+            font-family: Arial, sans-serif;
+            color: #666;
+            font-size: 18px;
+        }
+
+        /* CONTACT INFORMATION */
+
+        .contact-container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto 80px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+  .phone-contact a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 24px;
+    background: transparent;
+    color: #9b6b38;
+    border: 2px solid #9b6b38;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.phone-contact a:hover {
+    background: #9b6b38;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.booking-form label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.booking-form input {
+    width: 100%;
+    padding: 14px 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    background: #fafafa;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.booking-form input:focus {
+    border-color: #9b6b38;
+    background: white;
+}
+
+.booking-form button {
+    margin-top: 15px;
+
+    padding: 15px 25px;
+
+    border: none;
+    border-radius: 4px;
+
+    background: #9b6b38;
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.booking-form button:hover {
+    background: #252525;
+}
+        .contact-info a {
+            color: #9b6b38;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* BOOKING */
+
+        .booking-box p {
+            font-family: Arial, sans-serif;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* FOOTER */
+/* SOCIAL MEDIA */
+
+.social-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f3eee7;
+}
+
+.social-section h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.social-section p {
+    font-family: Arial, sans-serif;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 25px;
+    background: white;
+    color: #252525;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.social-icon {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.social-link:hover .social-icon {
+    transform: scale(1.2);
+}
+
+.social-icon {
+    transition: transform 0.3s ease;
+}
+        footer {
+            background: #111111;
+            color: white;
+            padding: 50px 7%;
+            text-align: center;
+        }
+
+        footer h2 {
+            font-size: 30px;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            font-family: Arial, sans-serif;
+            color: #aaa;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .contact-container {
+                width: 92%;
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .contact-info,
+            .booking-box {
+                padding: 30px 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            <img src="images/logo.png" alt="Ciauru Pasta Bar">
+        </div>
+
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="index.html#about">ABOUT</a>
+            <a href="index.html#favourites">FAVOURITES</a>
+            <a href="menu.html">MENU</a>
+            <a href="index.html#reviews">REVIEWS</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+
+    </header>
+
+
+    <!-- CONTACT -->
+
+    <main>
+
+        <section class="contact-heading">
+
+            <h1>Contact Ciauru</h1>
+
+            <p>Get in touch with us.</p>
+
+        </section>
+
+
+        <div class="contact-container">
+
+            <section class="contact-info">
+
+                <h2>Contact Us</h2>
+
+                <p>
+                    <strong>Address</strong><br>
+                    <p>
+    <a href="https://www.google.com/maps/search/?api=1&query=231+Crookes+Sheffield+S10+1TE"
+       target="_blank"
+       rel="noopener noreferrer">
+        231 Crookes, Sheffield S10 1TE
+    </a>
+</p>
+<div class="map-container">
+    <iframe
+        src="https://www.google.com/maps?q=231+Crookes,+Sheffield+S10+1TE&output=embed"
+        width="100%"
+        height="350"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+                </p>
+
+                <p class="phone-contact">
+                    <strong>Call Us</strong><br>
+                    <a href="tel:+441143491860">+44 114 349 1860</a>
+                </p>
+
+            </section>
+
+
+            <section class="booking-box">
+
+                <h2>Book a Table</h2>
+
+                <p>
+                    Choose your date, time and number of guests to request a table.
+                </p>
+
+<form class="booking-form" action="https://api.web3forms.com/submit" method="POST">
+
+    <input type="hidden" name="access_key" value="a9275f1c-3432-463c-9051-3715a4c44ef3"
+    <input type="hidden" name="subject" value="New Ciauru Table Booking Request">
+
+    <label for="booking-date">Date</label>
+    <input type="date" id="booking-date" name="date" required>
+
+    <label for="booking-time">Time</label>
+    <input type="time" id="booking-time" name="time" required>
+
+    <label for="booking-name">Name</label>
+    <input type="text" id="booking-name" name="name" placeholder="Your name" required>
+
+    <label for="booking-email">Email address</label>
+    <input type="email" id="booking-email" name="email" placeholder="Your email address" required>
+
+    <label for="booking-guests">Number of people</label>
+    <input type="number" id="booking-guests" name="guests" min="1" max="20" placeholder="Number of guests" required>
+
+    <label for="booking-phone">Phone number</label>
+    <input type="tel" id="booking-phone" name="phone" placeholder="Your phone number" required>
+
+    <button type="submit">REQUEST A TABLE</button>
+
+</form>
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+<!-- SOCIAL MEDIA -->
+
+<section class="social-section">
+
+    <h2>Stay Connected</h2>
+
+    <p>
+        Enjoyed your visit? Follow us on Instagram and Facebook
+        and stay up to date with what's happening at Ciauru.
+    </p>
+
+    <div class="social-links">
+
+        <a
+            href="https://www.instagram.com/ciaurupastabarsheffield/?hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link">
+
+            <span class="social-icon">📷</span>
+            <span>Instagram</span>
+
+        </a>
+
+        <a
+            href="https://www.facebook.com/people/Ciauru-pasta-bar-Sheffield/61590593560656/?sk=about"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link">
+
+            <span class="social-icon">ⓕ</span>
+            <span>Facebook</span>
+
+        </a>
+<a
+    href="https://www.tripadvisor.co.uk/Restaurant_Review-g186364-d34583126-Reviews-Ciauru_Pasta_Bar-Sheffield_South_Yorkshire_England.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social-link">
+
+    <span class="social-icon">★</span>
+    <span>Tripadvisor</span>
+
+</a>
+    </div>
+
+</section>
+    <footer>
+
+        <h2>CIAURU</h2>
+
+        <p>Pasta Bar</p>
+
+    </footer>
+
+    

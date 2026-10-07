@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menu | Ciauru Pasta Bar</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #faf7f2;
+            color: #252525;
+        }
+
+        /* HEADER */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 6%;
+
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e7e1d9;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #252525;
+
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #9b6b38;
+        }
+
+        /* MENU TITLE */
+
+        .menu-heading {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
+
+        .menu-heading h1 {
+            font-size: clamp(50px, 7vw, 90px);
+            margin-bottom: 15px;
+        }
+
+        .menu-heading p {
+            font-family: Arial, sans-serif;
+            color: #666;
+            font-size: 18px;
+        }
+
+        /* MENU SLIDER */
+
+        .menu-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 80px;
+        }
+
+        .menu-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-slides {
+    width: 100%;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+.menu-slide {
+    width: 100%;
+    display: none;
+    animation: slideIn 0.5s ease;
+}
+
+.menu-slide.active {
+    display: block;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+    color: #252525;
+
+    font-size: 35px;
+    line-height: 1;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s ease;
+}
+
+.slider-button:hover {
+    background: #9b6b38;
+    color: white;
+}
+
+.slider-button.prev {
+    left: 20px;
+}
+
+.slider-button.next {
+    right: 20px;
+}
+
+.slide-counter {
+    text-align: center;
+    margin-top: 20px;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #666;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+        /* FOOTER */
+
+        footer {
+            background: #111111;
+            color: white;
+            padding: 50px 7%;
+            text-align: center;
+        }
+
+        footer h2 {
+            font-size: 30px;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            font-family: Arial, sans-serif;
+            color: #aaa;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .menu-container {
+                width: 96%;
+            }
+
+            .menu-pdf {
+                height: 800px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            <img src="images/logo.png" alt="Ciauru Pasta Bar">
+        </div>
+
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="index.html#about">ABOUT</a>
+            <a href="index.html#favourites">FAVOURITES</a>
+            <a href="menu.html">MENU</a>
+            <a href="index.html#reviews">REVIEWS</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+
+    </header>
+
+
+    <!-- MENU -->
+
+    <main>
+
+        <section class="menu-heading">
+
+            <h1>La Carte</h1>
+
+            <p>Every plate begins with fresh ingredients.</p>
+
+        </section>
+
+
+        <div class="menu-container">
+
+    <div class="menu-slider">
+
+        <button class="slider-button prev" onclick="changeSlide(-1)">‹</button>
+
+        <div class="menu-slides">
+
+            <img src="images/IMG_8282.jpeg"
+                 class="menu-slide active"
+                 alt="Ciauru Pasta Bar Menu - Page 1">
+
+            <img src="images/IMG_8283.jpeg"
+                 class="menu-slide"
+                 alt="Ciauru Pasta Bar Menu - Page 2">
+
+            <img src="images/IMG_8284.jpeg"
+                 class="menu-slide"
+                 alt="Ciauru Pasta Bar Menu - Page 3">
+
+        </div>
+
+        <button class="slider-button next" onclick="changeSlide(1)">›</button>
+
+    </div>
+
+    <div class="slide-counter">
+        <span id="slide-number">1</span> / 3
+    </div>
+
+</div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>CIAURU</h2>
+
+        <p>Pasta Bar</p>
+
+    </footer>
+<script>
+    let currentSlide = 0;
+
+    const slides = document.querySelectorAll(".menu-slide");
+    const slideNumber = document.getElementById("slide-number");
+
+    function changeSlide(direction) {
+
+        slides[currentSlide].classList.remove("active");
+
+        currentSlide += direction;
+
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+
+        slides[currentSlide].classList.add("active");
+
+        slideNumber.textContent = currentSlide + 1;
+    }
+</script>
+</body>
+
+</html>
